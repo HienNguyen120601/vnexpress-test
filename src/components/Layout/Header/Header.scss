@@ -1,9 +1,19 @@
 .header {
-    position : relative;
-    display  : flex;
-    max-width: 120rem;
-    width    : 100%;
-    margin   : 0 auto;
+    position      : relative;
+    display       : flex;
+    max-width     : 120rem;
+    width         : 100%;
+    margin        : 0 auto;
+    flex-direction: column;
+
+
+
+    /* required */
+    &_wrapper {
+        position: absolute;
+        width   : 100%;
+        height  : 100vh;
+    }
 
     &_top {
         width      : 100%;
@@ -11,6 +21,7 @@
         align-items: center;
         height     : var(--header-height);
         padding    : 1rem 0;
+
 
         &>div {
             cursor: pointer;
@@ -87,14 +98,15 @@
         }
 
         &-area {
-            position  : absolute;
-            top       : 4rem;
-            width     : 20rem;
-            height    : 8.5rem;
-            box-shadow: 0 1px 4px rgb(0 0 0 / 20%);
-            padding   : 0.5rem 1.5rem;
-            opacity   : 0;
-            display   : none;
+            position        : absolute;
+            top             : 4rem;
+            width           : 20rem;
+            height          : 8.5rem;
+            box-shadow      : 0 1px 4px rgb(0 0 0 / 20%);
+            padding         : 0.5rem 1.5rem;
+            opacity         : 0;
+            display         : none;
+            background-color: var(--white-color);
 
 
             >ul {
@@ -171,5 +183,301 @@
         margin-left: 5rem;
         font-size  : 1.8rem;
         color      : #7b7b7b;
+    }
+
+    &_navbar {
+
+        border-top: 1px solid #7b7b7b;
+        padding   : 1rem;
+        display   : flex;
+        width     : 100%;
+    }
+}
+
+.login {
+    position       : absolute;
+    width          : 100%;
+    height         : 100vh;
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+
+
+    &_overlay {
+        position        : fixed;
+        left            : 0;
+        right           : 0;
+        top             : 0;
+        bottom          : 0;
+        background-color: rgba($color: #000000, $alpha: .5);
+    }
+
+    &_container {
+        position        : absolute;
+        z-index         : 1;
+        background-color: var(--white-color);
+        padding         : 2rem;
+        width           : 50%;
+        height          : 60%;
+    }
+
+    &_title {
+        display        : flex;
+        justify-content: space-between;
+        font-size      : 2.6rem;
+        color          : var(--primary-color);
+        font-weight    : 600;
+        height         : 5.5rem;
+        align-items    : center;
+        border-bottom  : 1px solid #333;
+
+        &>div {
+            width     : 50%;
+            height    : 100%;
+            text-align: center;
+            cursor    : pointer;
+
+
+
+        }
+
+    }
+
+    &_content {
+        display: flex;
+
+        &>div {
+            width: 50%;
+        }
+    }
+
+    &_input {
+        padding       : 2rem;
+        display       : flex;
+        flex-direction: column;
+
+        &>input {
+            height       : 4.5rem;
+            border-color : #7b7b7b;
+            outline      : none;
+            padding      : 0 1.5rem;
+            border-radius: .5rem;
+            margin-bottom: 3rem;
+        }
+
+        &>button {
+            height          : 4.5rem;
+            border-radius   : .5rem;
+            background-color: #b2b2b2;
+            font-size       : 1.6rem;
+            border          : none;
+            font-weight     : 600;
+            color           : var(--white-color);
+            margin-bottom   : 3rem;
+            cursor          : pointer;
+        }
+
+        & span {
+            display   : block;
+            font-size : 1.6rem;
+            color     : #7b7b7b;
+            width     : 100%;
+            text-align: center;
+            cursor    : pointer;
+        }
+    }
+
+    &_type {
+        padding       : 2rem;
+        display       : flex;
+        flex-direction: column;
+        align-items   : center;
+
+        &>div {
+            height: 4.5rem;
+            width : 24rem;
+
+            display      : flex;
+            align-items  : center;
+            padding      : 2rem;
+            margin-bottom: 2rem;
+            font-size    : 1.6rem;
+            font-weight  : 600;
+            cursor       : pointer;
+
+            &:nth-child(1) {
+                border: 1px solid #3b5999;
+                color : #3b5999;
+            }
+
+            &:nth-child(2) {
+                border: 1px solid #4688f1;
+                color : #4688f1;
+            }
+
+            &:nth-child(3) {
+                border: 1px solid #333;
+                color : #333;
+            }
+
+            &>span {
+                display   : block;
+                width     : 80%;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.register {
+    position       : absolute;
+    width          : 100%;
+    height         : 100vh;
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+
+
+    &_overlay {
+        position        : fixed;
+        left            : 0;
+        right           : 0;
+        top             : 0;
+        bottom          : 0;
+        background-color: rgba($color: #000000, $alpha: .5);
+    }
+
+    &_container {
+        position        : absolute;
+        z-index         : 1;
+        background-color: var(--white-color);
+        padding         : 2rem;
+        width           : 50%;
+        height          : 60%;
+    }
+
+    &_title {
+        display        : flex;
+        justify-content: space-between;
+        font-size      : 2.6rem;
+        color          : var(--primary-color);
+        font-weight    : 600;
+        height         : 5.5rem;
+        align-items    : center;
+        border-bottom  : 1px solid #333;
+
+        &>div {
+            width     : 50%;
+            height    : 100%;
+            text-align: center;
+            cursor    : pointer;
+
+
+
+        }
+
+    }
+
+    &_content {
+        display: flex;
+
+        &>div {
+            width: 50%;
+        }
+    }
+
+    &_input {
+        padding       : 2rem;
+        display       : flex;
+        flex-direction: column;
+
+        &>input {
+            height       : 4.5rem;
+            border-color : #7b7b7b;
+            outline      : none;
+            padding      : 0 1.5rem;
+            border-radius: .5rem;
+            margin-bottom: 3rem;
+        }
+
+        &>button {
+            height          : 4.5rem;
+            border-radius   : .5rem;
+            background-color: #b2b2b2;
+            font-size       : 1.6rem;
+            border          : none;
+            font-weight     : 600;
+            color           : var(--white-color);
+            margin-bottom   : 3rem;
+            cursor          : pointer;
+        }
+
+        & span {
+            display   : block;
+            font-size : 1.6rem;
+            color     : #7b7b7b;
+            width     : 100%;
+            text-align: center;
+            cursor    : pointer;
+        }
+    }
+
+    &_type {
+        padding       : 2rem;
+        display       : flex;
+        flex-direction: column;
+        align-items   : center;
+
+        &>div {
+            height: 4.5rem;
+            width : 24rem;
+
+            display      : flex;
+            align-items  : center;
+            padding      : 2rem;
+            margin-bottom: 2rem;
+            font-size    : 1.6rem;
+            font-weight  : 600;
+            cursor       : pointer;
+
+            &:nth-child(1) {
+                border: 1px solid #3b5999;
+                color : #3b5999;
+            }
+
+            &:nth-child(2) {
+                border: 1px solid #4688f1;
+                color : #4688f1;
+            }
+
+            &:nth-child(3) {
+                border: 1px solid #333;
+                color : #333;
+            }
+
+            &>span {
+                display   : block;
+                width     : 80%;
+                text-align: center;
+            }
+        }
+    }
+}
+
+.nav {
+    &_list {
+        width          : 100%;
+        list-style     : none;
+        display        : flex;
+        justify-content: space-between;
+    }
+
+    &_item {
+        font-size  : 1.8rem;
+        font-weight: 600;
+
+        &:hover {
+            color: var(--primary-color);
+        }
     }
 }
