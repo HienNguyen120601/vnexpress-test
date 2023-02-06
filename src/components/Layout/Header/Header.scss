@@ -1,0 +1,175 @@
+.header {
+    position : relative;
+    display  : flex;
+    max-width: 120rem;
+    width    : 100%;
+    margin   : 0 auto;
+
+    &_top {
+        width      : 100%;
+        display    : flex;
+        align-items: center;
+        height     : var(--header-height);
+        padding    : 1rem 0;
+
+        &>div {
+            cursor: pointer;
+        }
+    }
+
+    &_img {
+        display: inline-block;
+
+    }
+
+    &_date {
+        position   : relative;
+        height     : 100%;
+        display    : flex;
+        align-items: center;
+        font-size  : 1.6rem;
+        margin-left: 5rem;
+        color      : #7b7b7b;
+
+        &::after {
+            content   : "";
+            position  : absolute;
+            height    : 70%;
+            width     : 0.1rem;
+            background: #7b7b7b;
+            left      : -2.5rem;
+        }
+    }
+
+    &_newest {
+        position   : relative;
+        margin-left: 5rem;
+        font-size  : 1.6rem;
+        color      : #7b7b7b;
+
+        &>svg {
+            margin-right: 0.5rem;
+            font-size   : 1.8rem;
+        }
+    }
+
+    &_location {
+        margin-left: 5rem;
+        font-size  : 1.6rem;
+        color      : #7b7b7b;
+        display    : flex;
+        align-items: center;
+        height     : 100%;
+        position   : relative;
+
+        &>svg {
+            font-size   : 1.8rem;
+            margin-right: 0.5rem;
+        }
+
+        &::after {
+            content   : "";
+            position  : absolute;
+            height    : 70%;
+            width     : 0.1px;
+            background: #7b7b7b;
+            right     : -2.7rem;
+
+        }
+
+        &::before {
+            content : "";
+            position: absolute;
+            height  : 2rem;
+            width   : 100%;
+            bottom  : -1.4rem;
+
+        }
+
+        &-area {
+            position  : absolute;
+            top       : 4rem;
+            width     : 20rem;
+            height    : 8.5rem;
+            box-shadow: 0 1px 4px rgb(0 0 0 / 20%);
+            padding   : 0.5rem 1.5rem;
+            opacity   : 0;
+            display   : none;
+
+
+            >ul {
+                list-style     : none;
+                width          : 100%;
+                height         : 100%;
+                display        : flex;
+                flex-direction : column;
+                justify-content: center;
+
+                >li {
+                    height     : 50%;
+                    display    : flex;
+                    align-items: center;
+                    font-weight: 600;
+
+                    &:hover {
+                        color: #b42652;
+                    }
+                }
+            }
+
+        }
+
+        &:hover .header_location-area {
+            display: block;
+            opacity: 1;
+        }
+    }
+
+    &_find {
+        margin-left  : 5rem;
+        border-radius: 1rem;
+        border       : 1px solid #7b7b7b;
+        height       : 100%;
+        display      : flex;
+        align-items  : center;
+
+        & input {
+            font-size    : 1.6rem;
+            outline      : none;
+            border       : none;
+            padding      : 1rem;
+            border-radius: 1rem;
+            max-width    : 16rem;
+            max-height   : 100%;
+        }
+
+        & svg {
+            font-size   : 1.6rem;
+            margin-right: 0.5rem;
+            color       : #7b7b7b;
+
+        }
+    }
+
+    &_account {
+        margin-left: 5rem;
+        font-size  : 1.6rem;
+
+
+        & svg {
+            font-size   : 1.8rem;
+            margin-right: 0.5rem;
+
+        }
+
+        &:hover {
+            color: #3fa1e1;
+        }
+    }
+
+    &_notify {
+        margin-left: 5rem;
+        font-size  : 1.8rem;
+        color      : #7b7b7b;
+    }
+}
