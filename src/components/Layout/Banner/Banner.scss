@@ -1,0 +1,55 @@
+.home_infomation {
+
+    position  : relative;
+    margin-top: 5rem;
+
+}
+
+.infomation {
+    &_title {
+        position : relative;
+        font-size: 2rem;
+
+
+        &::after {
+            content         : "";
+            position        : absolute;
+            height          : 2px;
+            width           : 22rem;
+            background-color: red;
+            bottom          : 0;
+            left            : 0;
+        }
+    }
+
+    &_list {
+        margin-top: 2rem;
+        list-style: none;
+    }
+
+    &_item {
+        padding: .5rem;
+        cursor : pointer;
+
+        &>img {
+            width     : 100%;
+            object-fit: cover;
+        }
+
+        &>span {
+            display   : block;
+            margin-top: 1rem;
+            font-size : 1.6rem;
+        }
+    }
+
+
+}
+
+.slick-dots li.slick-active button:before {
+    color: var(--primary-color) !important;
+}
+
+.slick-dots li button:before {
+    font-size: 1.1rem;
+}
