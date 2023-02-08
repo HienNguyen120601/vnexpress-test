@@ -1,3 +1,5 @@
+import { Fragment } from "react";
+import { useParams } from "react-router";
 import Banner from "../../components/Layout/Banner"
 import "./Detail.scss"
 const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -68,14 +70,101 @@ const tags = [
         type: "Khoa học"
     },
 ]
+const data = [
+    {
+        id: 0,
+        title: "Đàn cáo con phá hỏng chuyến đi săn của mẹ",
+        frame: "https://www.youtube.com/embed/BQed5b3W8x4"
+    },
+    {
+        id: 1,
+        title: "'Tàu cá mập' tốc độ 89 km/h'",
+        frame: "https://www.youtube.com/embed/UraqDFtqGAg"
+    },
+    {
+        id: 2,
+        title: "Nhà chọc trời xây từng tầng từ trên xuống",
+        frame: "https://www.youtube.com/embed/VTmFLAizRqk"
+
+    },
+    {
+        id: 3,
+        title: "Cửa sổ kiểm soát ánh sáng lấy cảm hứng từ da mực",
+        frame: "https://www.youtube.com/embed/LH65D99XZvI"
+    },
+    {
+        id: 4,
+        title: "Xe điện của Elon Musk sau 5 năm bay vào vũ trụ",
+        frame: "https://www.youtube.com/embed/JfkwM98h96k"
+    },
+    {
+        id: 5,
+        title: "Trung Quốc thúc đẩy chương trình thám hiểm Mặt Trăng",
+        frame: "https://www.youtube.com/embed/_5oSoCvYwBA"
+    },
+    {
+        id: 6,
+        title: "Những công trình lịch sử bị phá hủy trong động đất",
+        frame: "https://www.youtube.com/embed/LtZspcF6r0k"
+    },
+    {
+        id: 7,
+        title: "Google ra chatbot AI cạnh tranh với ChatGPT",
+        frame: "https://www.youtube.com/embed/kmBypsgfqPw"
+    },
+    {
+        id: 8,
+        title: "Một ngày của Elon Musk diễn ra thế nào",
+        frame: "https://www.youtube.com/embed/9YwmJ2naxQY"
+    },
+    {
+        id: 9,
+        title: "Bán dẫn Trung Quốc đối mặt áp lực ngay đầu năm",
+        frame: "https://www.youtube.com/embed/BQed5b3W8x4"
+    },
+    {
+        id: 10,
+        title: "Giá iPhone tăng 66% kể từ 2009",
+        frame: "https://www.youtube.com/embed/UraqDFtqGAg"
+    },
+    {
+        id: 11,
+        title: "Mở hộp Galaxy S23 Ultra",
+        frame: "https://www.youtube.com/embed/VTmFLAizRqk"
+    },
+    {
+        id: 12,
+        title: "Gần 7.000 nhân viên Dell mất việc",
+        frame: "https://www.youtube.com/embed/LH65D99XZvI"
+    },
+    {
+        id: 13,
+        title: "Tại sao có điều hòa vẫn nên mua máy hút ẩm",
+        frame: "https://www.youtube.com/embed/JfkwM98h96k"
+    },
+]
 function Detail() {
+    const id = useParams()
+
     return (<div className="detail">
         <div className="detail_container">
             <div className="detail_content">
                 <div className="content_header">Khoa học</div>
                 <span className="content_date">{dateString}</span>
-                <div className="content_title">Cháy kho phế liệu cột khỏi bốc cao hàng mét</div>
-                <iframe width="660" height="415" src="https://www.youtube.com/embed/BuLjhM86w6A" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+                <div className="content_title">{
+                    data.map((item) => {
+
+                        if (item.id + "" === id.id) {
+                            console.log(id)
+                            return (<Fragment>
+                                <span>{item.title}</span>
+                                <iframe width="660" height="415" src={item.frame} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+
+                            </Fragment>)
+                        }
+
+                    })
+                }</div>
                 <div className="detail_news">
                     {
                         news.map((item, index) => {
